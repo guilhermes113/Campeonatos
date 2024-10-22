@@ -1,46 +1,199 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Campeonatos</title>
+    <title> Campeonatos</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Campeonatos.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Campeonatos</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <div>
+        <div class="offcanvas offcanvas-start show  offset-md-3" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-body">
+                <partial name="_LoginPartial" />
             </div>
-        </nav>
-    </header>
-    <div class="container">
+        </div>
+    </div>
+    <div class="sticky-header-container">
+            <header class="top-navigation" style="background-color: #000;">
+                <div class="container">
+                    <div class="top-navigation-main">
+                        <nav class="navbar border-body">
+                            <div class="container-fluid">
+                                <button class="bb0 btn btn-outline" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                                    <i class="bi bi-person"></i></button>
+                                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" style="background-color: #000;">
+                                            <div class="offcanvas-header">
+                                                <h2 class="offcanvas-title text-white" id="offcanvasWithBothOptionsLabel"> Usuário</h2>
+                                                <button type="button X" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: #fff;;"><i class="bi bi-x"></i></button>
+                                            </div>
+                                            <div class="offcanvas-body">
+                                                <Div >
+                                                    <div class="card" style="width: 18rem; border-color: blueviolet; background-color: black;">
+                                                        <div class="by0gr card-header text-white">
+                                                        <h4>Time</h4>
+                                                        </div>
+                                                        <ul class="by0gr list-group list-group-flush" >
+                                                            <li class="list-group-item bg-black text-white">An item</li>
+                                                        </ul>
+                                                    </div>
+                                                    <br>
+                                                    <div class="card" style="width: 18rem; border-color: blueviolet; background-color: black; line-height: 20px;">
+                                                        <div class="by0gr card-header text-white">
+                                                            <h4>Cargo</h4>
+                                                        </div>
+                                                        <ul class="by0gr list-group list-group-flush" >
+                                                            <li class="list-group-item bg-black text-white">An item</li>
+                                                        </ul>
+                                                    </div>
+                                                    <br>
+                                                    <div class="card" style="width: 18rem; border-color: blueviolet; background-color: black; line-height: 20px;">
+                                                        <div class="by0gr card-header text-white">
+                                                            <h4>Bio</h4>
+                                                        </div>
+                                                        <ul class="by0gr list-group list-group-flush" >
+                                                            <li class="list-group-item bg-black text-white">An item</li>
+                                                        </ul>
+                                                    </div>
+                                                </Div>
+                                            </div>
+                                        </div>      
+                                <a class=" navbar-brand text-white" href="#">Champions</a>
+                                    <button class="bb1 navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                                        <span class="bb1 navbar-toggler-icon"><i class="bi bi-list"></i></span>
+                                    </button>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #000;">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn-close me-md-2" data-bs-dismiss="offcanvas" aria-label="Close" style="color: #fff;"><i class="bi bi-x "></i></button>
+                                    </div>
+                                    
+                                    <div class="offcanvas-body">
+                                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                        <li class="nav-item">
+                                        <a class="nav-link active text-white" aria-current="page" href="#">Início</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Notícias e Lives</a>
+                                        </li>
+                                        <li class="nav-item dropdown ">
+                                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Valorant
+                                            </a>
+                                            <ul class="dropdown-menu" style="background-color: #000; border-color: purple;">
+                                                <li><a id="drps" class="dropdown-item text-white" > Campeonatos</a></li>
+                                                <li><a class="dropdown-item text-white" href="#"> Histórico </a></li>
+                                                <li>
+                                                <hr class="dropdown-divider" style=" border-color: purple;">
+                                                </li>
+                                                <li><a class="dropdown-item text-white" href="#">Times</a></li>
+                                                <li><a class="dropdown-item text-white" asp-controller="Users" asp-action="Index">Jogadores</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown ">
+                                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                PUBG - BATTLEGROUNDS
+                                            </a>
+                                            <ul class="dropdown-menu" style="background-color: #000; border-color: purple;">
+                                                <li><a id="drps" class="dropdown-item text-white" href="#">Solo</a></li>
+                                                <li><a class="dropdown-item text-white" href="#">Dupla</a></li>
+                                                <li><a class="dropdown-item text-white" href="#">Esquadrão</a></li>
+                                                <li>
+                                                <hr class="dropdown-divider" style=" border-color: purple;">
+                                                </li>
+                                                <li><a class="dropdown-item text-white" href="#">Jogadores</a></li>
+                                                <li><a class="dropdown-item text-white" href="#">Times</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <form class="d-flex mt-3" role="search">
+                                        <input class="bb2 form-control me-2 " type="search" placeholder="Search" aria-label="Search" style="text-decoration: #000;">
+                                        <button class="bb2 btn btn-outline-secondary text-white" type="submit" >Search</button>
+                                    </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </nav>
+                    </div>    
+                </div>
+            </header
+        </div>
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Campeonatos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    <footer class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="textwidget custom-html-widget">
+                                <div class="footer-column footer-sobre">
+                                    <h3 class="footer-title text-white" href="">Champions</h3>
+                                    <p class="footer-about-text text-white">Champions é a ideia de juntar todos os jogadores para ganhar enquanto se divertir.</p>
+                                    <p></p>
+                                    <p class="footer-about-text text-white">A ideia foi iniciada em meio a 2023 sendo desenvolvido inicio de 2024 pelo Desenvolvedor e Cientista de Dados Guilherme Sanches, com auxilio.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 offset-md-1">
+                            <div class="textwidget custom-html-widget">
+                                <div class="footer-column footer-explore clearfix">
+                                    <ul class="footer-explore-list list-unstyled">
+                                        <li class="nav-item">
+                                            <h5><a class="nav-link active text-white" aria-current="page" href="">Principal</a></h5>
+                                        </li>
+                                        <li class="nav-item">
+                                            <h5><a class="nav-link text-white" href="" >Notícias e Lives</a></h5>
+                                        </li>
+                                        <li class="nav-item">
+                                            <h5><a class="nav-link text-white" href="">Jogadores</a></h5>
+                                        </li>
+                                        <li class="nav-item">
+                                            <h5><a class="nav-link text-white" href="">Times</a></h5>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="textwidget custom-html-widget">
+                                <div class="footer-column footer-contact">
+                                    <div class="footer-contact-info">
+                                        <h3 class="footer-title">Contato</h3>
+                                        <a href="guilhermesanches248@gmail.com"><img src="images/Assinatura.png" alt="" ></a>
+                                       </div>
+                                        <div class="footer-about">
+                                        <a href=""><i class="ti-instagram"></i></a>
+                                        <a href="https://www.twitch.tv/crow_amens"><i class="bi bi-twitch" ></i></a>
+                                        <a href="https://www.youtube.com/channel/UCE_GPqdkV8aaI5Hu1ee9O3w"><i class="bi bi-youtube"></i></a>
+                                        <a href=""><i class="ti-facebook"></i></a>
+                                        <a href="https://discord.gg/nYKXAjKswq"><i class="bi bi-discord"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-bottom-inner">
+                                <p class="footer-bottom-copy-right text-white">© Copyright 2024 by <a class="text-white" href="" > Guilherme Sanches </a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

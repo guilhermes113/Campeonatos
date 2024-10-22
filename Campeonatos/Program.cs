@@ -1,15 +1,19 @@
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Campeonatos.Data;
-using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Camp>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Camp")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<Camp>();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
 /*
 void configureservices(iservicecollection services, iconfiguration configuration)
 {
@@ -24,7 +28,7 @@ void configureservices(iservicecollection services, iconfiguration configuration
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -39,5 +43,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 
 app.Run();

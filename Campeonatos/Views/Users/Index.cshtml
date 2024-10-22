@@ -1,2 +1,40 @@
-﻿@page
+﻿@model IEnumerable<User>
+@Html.Partial("_NovoItem","User")
+
+
+
+<div class="row busca alert alert-dark" role="alert"   >
+    <div class="col align-self-center col-md-3" >
+        <h4 class="text-uppercase text-center h4-co">Valorant</h4>
+    </div>
+    <div class="col-md-5 offset-md-4 ">
+        <form class="form-inline " asp-controller="Users" asp-action="Busca">
+            <input name="filtroBusca" type="text" class="form-control" placeholder="Buscar ....." />
+        </form>
+    </div>
+</div>
+    <div >
+        <div class="col-md-10 offset-md-1">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th> 
+                    </tr>
+                </thead>
+        <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex flex-column">
+                            </div>
+                        </td>
+                        <td class="align-middle">@user.Name</td>
+                    </tr>
+                }
+        </tbody>
+       </table>
+    </div>
+  </div>
+
 

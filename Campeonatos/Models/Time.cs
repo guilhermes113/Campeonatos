@@ -3,34 +3,39 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Campeonatos.Models
 {
-    public class Time : Cadastro
+    public class Time : IEntidade
     {
-        public Time(string nome)
+        public Time(string name)
         {
             DataCadastro = DateTime.Now;
             DataAlteracao = DataCadastro;
-            Nome = nome;
+            Name = name;
         }
 
         public int Id { get; private set; }
         public DateTime DataCadastro { get; private set; }
         public DateTime DataAlteracao { get; private set; }
 
-        [Display(Name = "Nome")]
-        public string Nome { get; private set; }
+        [Display(Name = "Nome do Time")]
+        public string Name { get; private set; }
+
         [Display(Name = "Participantes")]
-        public string numero { get; private set; }
+        public string Participants { get; private set; }
+
         [Display(Name = "Campeonatos jogados")]
-        public int camps { get; private set; }
+        public int Games { get; private set; }
+
         [Display(Name = "Campeonatos Ganhos")]
-        public int Win { get; private set; }
+        public int Wins { get; private set; }
+
         [Display(Name = "Campeonatos Perdidos")]
-        public int lose { get; private set; }
-        [Display(Name = "Melhor Posição")]
-        public int melhor { get; private set; }
-        public void AtualizarDados(string nome)
+        public int Losers { get; private set; }
+
+        [Display(Name = "Melhor Camp")]
+        public int TopGame { get; private set; }
+        public void AtualizarDados(string name)
         {
-            Nome = nome;
+            Name = name;
             DataAlteracao = System.DateTime.Now;
         }
     }

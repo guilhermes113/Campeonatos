@@ -4021,8 +4021,8 @@ textarea.form-control-lg {
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border: 0px solid transparent;
+  border-radius: 0.0rem;
   transition: box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4033,16 +4033,17 @@ textarea.form-control-lg {
 .navbar-toggler:hover {
   text-decoration: none;
 }
+
 .navbar-toggler:focus {
-  text-decoration: none;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem;
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem;
 }
 
 .navbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
-  height: 1.5em;
+  height: 1.2em;
   vertical-align: middle;
   background-repeat: no-repeat;
   background-position: center;
@@ -6198,19 +6199,7 @@ textarea.form-control-lg {
     animation-duration: 1.5s;
   }
 }
-.offcanvas {
-  position: fixed;
-  bottom: 0;
-  z-index: 1045;
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  visibility: hidden;
-  background-color: #fff;
-  background-clip: padding-box;
-  outline: 0;
-  transition: transform 0.3s ease-in-out;
-}
+
 @media (prefers-reduced-motion: reduce) {
   .offcanvas {
     transition: none;
